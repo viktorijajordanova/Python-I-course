@@ -1,0 +1,173 @@
+"""Vezbi za IF-ELSE Statement"""
+l = [1,4,6,7,8,10]
+
+if l[0]%2 != 0:
+    print("Brojot e neparen")
+else:
+    print("Brojot e paren")
+
+print("This will always print")
+
+#Januari, Februari, Mart i April
+
+mesec = input ("Vnesi mesec: ").lower()
+
+if mesec == "januari ":
+    print("Внесениот месец е јануари")
+elif mesec == "fevruari":
+    print("Внесениот месец е февруари")
+elif mesec == "mart":
+    print("Внесениот месец е март")
+else:
+    print("Се работиза некој друг месец")
+
+
+"""FOR loops"""
+"""1. - Iteriranje na podatocnata struktura preku nejzinite elementi"""
+
+fruits = ["banana", "orange", "apple", "lemon"]
+
+# iteracija - i
+# i = 0: fruit = banana,
+# i = 1: fruit = orange,
+# i = 2: fruit = apple,
+# i = 3: fruit = lemon
+
+for fruit in fruits:
+    print(fruit)
+
+
+list1 = [2,3,9,1,6,11]
+
+# i = 0, l = 3.
+# i = 1, l = 4,
+# i = 2, l = 5,
+# i = 3, l = 6,
+# i = 4, l = 7,
+# l = 5, l = 8
+
+for l in list1:
+    if l%2 != 0:
+        print(l)
+
+#
+# i = 0, l1 = 0,
+# i = 1, l1 = 1,
+# i=2, l1 = 2 ..
+
+
+"""Iteriranje na podatocnata struktura preku nejzinite indeksi"""
+"""Proverka dali BROJOT NA INDEKS E PAREN BROJ (a ne samiot element!!!!) i printanje"""
+for l2 in range(0,len(list1)):
+    if l2%2 == 0:
+        print(l2)
+
+
+"""Presmetuvanje suma na elementi so for loop, sekoj cekor dodava po eden element na sumata posle posledniot cekor ja imame celosnata(konecna) suma"""
+lista = [4,5,6,7,8]
+
+# # i = 0, l = 4, suma = 0,
+# # i = 1, l =  5, suma = 4 ...
+#
+suma = 0
+for l in lista:
+#     # suma = 0 + 4 = 4
+#     # suma = 4 + 5
+#     # suma = 9 + 6
+#     # suma = 15 + 7
+#     # suma = 22 + 8
+#
+    suma = suma + l
+    print(suma)
+
+
+"""FOR loops za tuples - vazat istite raboti kako kaj listi"""
+
+aTuple = (4,6,9,2,5,1)
+
+for a in aTuple:
+    print(a)
+
+
+"""FOR loops za dicts"""
+
+dict = {
+
+    "name" : "Ana",
+    "age": 23,
+    "city": "Skopje"
+
+}
+
+print(dict.values())
+print(dict.keys())
+# i = 0, key = name,
+# i = 1, key = age,
+# i = 2, key = city
+"""FOR loop SAMO za klucevite na dict-ot"""
+for key in dict.keys():
+    print(key)
+
+"""FOR loop SAMO za vrednostite na dict-ot"""
+for value in dict.values():
+    print(value)
+
+"""FOR loop za site kombinacii(parovi) od tip key: value"""
+for item in dict.items():
+    print(item)
+
+
+dict1 =	{
+
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+
+}
+
+for value in dict1.values():
+    if value == 'Ford':
+        print ("This car is from the brand Ford")
+
+
+
+
+#da se isprintaat site prirodni broevi do brojot 10
+#
+# y = 0 -> print: 0,
+# y = 1 -> print  1,
+# y = 2 -> print: 2,
+# y = 3 -> print: 3 ..
+"""While loops"""
+# y = 0
+while y <= 10:
+    print(y)
+    y = y + 1
+else:
+    print("No more natural numbers lower than 10")
+
+"""Istata zadaca samo so for loop resena"""
+for z in range(0,11):
+    print(z)
+
+
+"""Rabota so elementi na lista"""
+list2 = [2,4,7,8,9,10]
+
+# i = 0 => 2
+# i + 1 => 4
+# i + 2 => 7
+# i + 3 => 8
+# i + 4 => 9
+# i + 5 => 10
+
+for l2 in range (0, len(list2)):
+    list2[l2], list2[l2+1] = list2[l2+1], list2[l2]
+    print(list2,l2)
+
+# l2 = 2, l2+1 = 4
+
+
+
+
+

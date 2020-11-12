@@ -1,0 +1,230 @@
+"""Podatocni strukturi vo Python"""
+
+
+"""Primitivni podatocni strukturi vo Python"""
+# c = 56789045678904567890567890345678904567890456789045678904567890
+# print(c.__str__())
+
+"""Definiranje i printanje na podatocen tip od koj e promenlivata - float"""
+d = 4.5
+print(type(d))
+
+
+"""Definiranje i printanje na podatocen tip od koj e promenlivata - int"""
+y = 7
+print(type(y))
+
+
+
+"""Definiranje i printanje na podatocen tip od koj e promenlivata - boolean"""
+b = True
+print(type(b))
+
+"""Smestuvanje string vo promenliva"""
+s = "Hello first Python program"
+
+
+"""Printanje na stringot"""
+print(s)
+
+
+"""Printanje dolzina na string"""
+print(len(s))
+
+
+
+"""Neprimitivni podatocni strukturi vo Python"""
+
+"""Definiranje i printanje na lista"""
+p = [1, 2, 6, 4, 7, 9]
+print(list[3])
+
+
+"""Lista so elementi od razlicni primitivni podatocni strukturi"""
+list = ["banana", 3, 8.5]
+
+
+"""Lista so elementi od podatocen tip float"""
+"""Presmetuvanje i printanje na suma na elementite na edna lista kade elementite se od podatocen tip float"""
+"""Dodavanje na element vo lista so append"""
+list1 = [1.2, 4.6, 7.9]
+print(sum(list1))
+list1.append(6)
+
+"""Pristapuvanje do element na lista - vo ovoj slucaj do nultiot element"""
+list1[0] = 5
+print(list1)
+
+"""Naoganje i printanje na podatocniot tip od koj e promenlivata list"""
+print(type(list))
+
+
+"""Definiranje na tuple"""
+"""Pristapuvanje i printanje na tretiot element od tuple-ot"""
+"""Broenje kolku pati elementot 'A' go ima vo tuple-ot so gotova funkcija count"""
+"""Presmetuvanje i printanje na dolzina na tuple so len"""
+g = ('A', 'B', 'C')
+print(g[2])
+print(g.count('A'))
+print(len(g))
+
+
+
+"""Definiranje na dict vo Python so vrednosti od razlicni podatocni tipovi"""
+dict = {
+
+    "name": "Viktorija",
+    "age": 26,
+    "gender": "Female",
+    "trainer": True
+
+}
+
+"""Pristapuvanje do kluc na dict - vo ovoj slucaj age i gender"""
+print(dict["age"])
+dict["gender"] = "male"
+
+"""Pristapuvanje i printanje na site klucevi od dictionary koj e smesten vo promenlivata dict"""
+print(dict.keys())
+
+"""Pristapuvanje i printanje na site vrednosti od dictionary koj e smesten vo promenlivata dict"""
+print(dict.values())
+
+
+
+
+
+"""Vezbi na cas"""
+# 1. Zadaca
+
+dict1 = {
+
+    "ime": "Skopje",
+    "drzava": "Makedonija",
+    "populacija": 200000
+
+}
+print(dict1["ime"])
+
+
+
+# 2. Zadaca
+
+list2 = [1, 5, 7, 9, 8]
+list2.append(10)
+print(list2)
+list2[3] = 8
+print(list2)
+
+
+# 3. Zadaca
+
+h = ('apple', 'B', 'C', 'D', 'F')
+print(len(h))
+
+
+# 4 Zadaca
+
+list3 = [2.3, 6, 8.5, 1, 0]
+print(sum(list3))
+
+ # 5 Zadaca - Slozeno definiranje na podatocnite tipovi
+
+list4 = [('h', '4', '6'), 4, 'apple', 2.3]
+print(list4[0])
+
+
+# 6 Zadaca
+dict2 = {
+    "ime" : {
+        "first_name": "Viktorija",
+        "middle_name":"Ana",
+        "last_name": "Jordanova"
+     },
+    "vozrast": 23,
+    "pol": "f"
+
+}
+print(dict2["ime"]["first_name"])
+print(dict2.keys())
+print(dict2.values())
+
+
+
+"""Zadaci od Domasnata"""""
+# 1.
+list1 = [5, 10, 15, 20, 25, 50, 20]
+list1.pop(6)
+list1.append(200)
+print(list1)
+
+#2.
+list2 = [5, 20, 15, 20, 25, 50, 20]
+list2.pop(1)
+list2.pop(2)
+list2.pop(-1)
+print(list2)
+
+#3.
+# Zadaca: keys = ['Ten', 'Twenty', ‘Thirty']  values = [10, 20, 30]
+dict3 = {
+
+    "Ten": 10,
+    "Twenty": 20,
+    "Thirty": 30
+
+}
+print(dict3)
+
+#4.
+
+sampleDict = {
+    "cas":{
+        "fizika": 70,
+        "istorija": 80
+    }
+}
+
+print(sampleDict["cas"]["istorija"])
+
+
+
+#5.
+sampleDict1 = {
+    "name" : "Ana",
+    "age" : 25,
+    "salary": 8000,
+    "city": "Skopje"
+}
+
+
+sampleDict2 = {
+
+    "name": "Ana",
+    "age": 25
+}
+
+print(sampleDict2)
+
+#6.
+aTuple = ("orange", [10, 20, 30], (5, 15, 25))
+print(aTuple[1][1])
+
+#7.
+t = (-50)
+print(t)
+
+#8.
+tuple1 = (22, 44, 55)
+lst = list(t)
+lst[0] = '300'
+t = tuple(lst)
+
+
+
+
+
+
+
+
+

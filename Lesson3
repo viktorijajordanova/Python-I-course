@@ -1,0 +1,99 @@
+"""User - Input (Number)"""
+"""Pretvoranje vo integer bidejkji input funkcijata ni dava isklucivo stringovi"""
+"""Dodavanje 2 na brojot koj sme go vnele (Izvrsuvanje matematicka operacija otkako veke sme go pretvorile vo int vneseniot broj)"""
+broj = input("Vnesi broj: ")
+b = int (broj)
+print(b)
+print(b+2)
+
+
+"""User - Input (string)"""
+name = input("Enter your name: ")
+print(name)
+
+day = input ("What day is it? ")
+print(day)
+
+"""Ednostavna proverka na tocnost na uslov (Evaluacija)"""
+print(day == "Monday")
+
+
+"""Slozena proverka na tocnost na uslov (Evaluacija)"""
+"""IF - ELSE Statements"""
+
+if day == "Monday":
+    print("Have a great week!")
+
+elif day == "Wednesday":
+    print("It's Wednesday")
+
+elif day == "Thursday":
+    print("It's Thursday")
+
+else:
+    print("Six more day to go ...")
+
+"""IF-ELSE so dva uslovi istovremeno koi STROGO treba da bidat ispolneti za da se isprinta i"""
+i=3
+if i<5 and i>1:
+    print(i)
+
+
+l = [5, 10, 20, 4, 7, 15]
+#  presmetajte dolzina na lista i proverete dali e pogolema od 10
+x = len(l)
+
+if x > 10:
+    print("Dolzina na listata e pogolema od 10")
+elif x == 10:
+    print("Dolzinata na listata e ednakva na 10")
+else:
+    print("Dolzinata na listata e pomala od 10")
+
+
+"""Drugi nacin na proverka dali dolzinata na listata e pogolema od 10"""
+# if x <= 10:
+#     print("Dolzinata e pomala od 10")
+# else:
+#     print("Dolzinata e pogolema od 10")
+
+
+"""Definiranje opseg - vo ovoj slucaj na listata smestena vo promenlivata l"""
+range(0,len(l))
+
+
+"""Proverka dali 9 e deliv so 3"""
+i = 9
+if i%3 == 1:
+    # if i%3 != 0:
+    print("Brojot 9 ne e deliv so 3")
+else:
+    print("Brojot 9 e deliv so 3")
+
+
+
+"""Proverka dali 5 e paren broj"""
+z = 5
+if z%2 == 0:
+    print("Brojot 5 e paren")
+
+else:
+    print("Brojot 5 ne e paren")
+
+
+"""Proverka dali a e neparen broj so User - Input"""
+y = input ("Vnesi broj za proverka:")
+a = int(y)
+if a%2 != 0:
+    print ("Brojot ne e paren")
+else:
+    print("Brojot e paren")
+
+
+
+
+
+
+
+
+

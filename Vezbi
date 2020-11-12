@@ -1,0 +1,156 @@
+"""Operacii na lista"""
+list1 = [1,2,3,4,5,6,7,8,9,10]
+
+
+"""Suma na elementite od listata i proverka so if uslov dali sumata e pogolema od 20"""
+
+s = sum(list1)
+print(s)
+if s > 20:
+    print("Sumata na listata e pomala od 20")
+
+
+
+"""Dolzina na lista i proverka dali dolzinata e pomala od 20"""
+
+l = len(list1)
+print(l)
+if l < 20:
+    print("Dolzinata na listata e pomala od 20")
+
+
+
+"""Presmetuvanje modul na broj, vo ovoj slucaj proverka dali dolzinata na listata e ednakva na 5"""
+if l%5 == 0:
+    print("Dolzinata na listata e broj deliv so 5")
+
+
+
+"""Proverka dali sumata na broevite od listata e broj deliv so 3"""
+if s%3!=0:
+    # ili s%3 == 1
+    print ("Sumata na broevite od ovaa lista ne e broj deliv so 3")
+
+
+
+"""Definiranje na dva uslovi vo if, od koi strogo i dvata treba da bidat ispolneti"""
+if l<20 and s>20:
+    print(s,l)
+
+
+
+"""Proverka dali dolzinata na listata e broj deliv so 5 i dali sumata e deliva so 3 - STROGO I DVATA USLOVI MORA DA BIDAT ISPOLNETI ZA DA SE IZVRSI KODOT"""
+"""VO OVOJ SLUCAJ DA SE ISPRINTA TRUE"""
+
+if l%5==0 and s%3!=0:
+    print(True)
+
+
+
+
+
+"""User input - Number"""
+num = input ("Enter a number: ")
+num1 = int(num)
+print(num)
+
+"""IF-ELSE Vezbi"""
+
+"""Ovaa zadaca e prodolzenie na User Input - Number primerot od pogore"""
+if num1 < 5:
+    print("The choosen number is lower than 5")
+elif num1 == 5:
+    print("The choosen number is 5")
+else:
+    print("The choosen number is ")
+
+
+"""Proverka na parnost samo na prviot element na listata (so pristapuvanje do element)"""
+l = [1,2,3]
+if l[0]%2 != 0:
+    print("Prviot element od listata e neparen broj")
+else:
+    print ("Prviot element od listata ne e neparen broj")
+
+
+"""WHILE loop Vezbi"""
+
+list = [1,2,4,6,8,10,16]
+count = 0
+while (count < 9):
+   print ('The count is:', count)
+   count = count + 1
+print ("Good bye!")
+
+
+y = 0
+while y <= 10:
+    print(y)
+    y = y + 1
+else:
+    print("No more natural numbers lower than 10")
+
+
+"""FOR loop Vezbi"""
+"""Iteriranje na strukturata po nejzinite elementi"""
+"""Lists"""
+friends = ['Ana', 'Jana', 'Filip', 'Elena', 'Ivana']
+for friend in friends:
+    print(friend)
+# i -> iteracija
+# i = 0, friend ='Ana'
+# i = 1, friend = 'Jana' ......
+
+
+fruits = ['Banana', 'Apple', 'Chery', 'Lemon']
+for fruit in fruits:
+    print(fruit)
+
+
+
+"""Tuples"""
+tup = (1,2,3,4,5,6,7,8,9)
+for t in tup:
+    if t%2 != 0:
+        print(t)
+
+
+
+"""Dictionaries"""
+dict = {
+
+    "ime": "Jana",
+    "age": 25,
+    "from": "Skopje",
+    "population": 800000
+}
+for value in dict.values():
+    print(value)
+
+
+
+
+"""Iteriranje na struktura (lista vo ovoj slucaj) po nejzinite indeksi"""
+listv = [5,6,7,2,3]
+print(listv)
+for l in range(0,len(listv)-1):
+    listv[l], listv[l+1] = listv[l+1], listv[l]
+    l = l + 1
+    print(listv,l)
+
+
+
+"""Presmetuvanje na sredna vrednost na elementi - Average (bez gotova funkcija)"""
+list2 = [1,2,3]
+suma = 0
+l = len(list2)
+for i in list2:
+    suma = suma + i
+    print(suma)
+avg = suma/l # Sumata na elementite podelena so brojot na elementite (length) ke ja dade srednata vrednost t.e Aritmeticka sredina
+
+
+
+
+
+
