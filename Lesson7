@@ -1,0 +1,143 @@
+"""Rabota so file-ovi (write, read, delete, move, append, rename, remove ....)"""
+import os
+import shutil as sh
+
+"""Zemanje na patekata vo koja sto se naoga Lesson7.py file-ot"""
+cwd = print(os.getcwd())
+
+
+"""Kreiranje i otvaranje vo write mode new.txt file i zapisuvanje Hello World vo toj file"""
+my_file = open("new.txt", "w")
+my_file.write("Hello world!")
+my_file.close()
+
+
+"""Kreiranje i otvaranje vo write+ odnosno write and read mode i zapisuvanje na podolg string so new line \n"""
+with open("helloworld.txt", "w+") as my_file1:
+    my_file1.write("\nMy name is Viktorija Jordanova\nHappy New Year ")
+    """Zatvaranje na file-ot"""
+    my_file1.close()
+
+
+"""Kreiranje i otvaranje na file viktorija.txt na koj predavame lista od stringovi koi ke bidat zapisani vo nov red aprethodno se smesteni
+ vo promenliva filebuffer"""
+file_1 = open ("viktorija.txt", "w")
+filebuffer = ["a frist line\na second line", "\na second line", "\na third line"]
+file_1.writelines(filebuffer)
+file_1.close()
+
+"""Zapisuvanje vo file-ot helloworld1 linija po linija so metodot writelines()"""
+with open("helloworld1.txt", 'w') as file_2:
+    filebuffer= ["a frist line of text", "\nanother line of text", "\na third line of text"]
+    file_2.writelines("%s\n" %line for line in filebuffer)
+
+
+file_v = "nov_file.txt"
+
+file_content = ["Hello World", "a second line", "and a third line"]
+
+with open(file_v, "w") as file_handle:
+    file_handle.writelines(file_content)
+
+"""dodavanje tekst vo new.txt so append"""
+my_file_3 = open("new.txt", "a")
+my_file_3.write('\n' + "Jas sum Viktorija!\n")
+my_file_3.close()
+
+
+
+with open("new.txt", "a") as file_3:
+    file_3.write("\nThis a Python I course at Semos Education")
+
+
+"""Citanje od file viktorija.txt i printanje vo console line na procitanoto"""
+with open("viktorija.txt", "r") as filename:
+    for line in filename:
+        print(line)
+
+
+with open("helloworld1.txt", "r") as file_handle1:
+    file_content = file_handle1.readlines()
+    for line in file_content:
+            print(line)
+
+""""""
+file_ex = open("/Users/viktorija/PycharmProjects/Python-I-course/viktorija.txt", "w")
+
+"""Reimenuvanje na file so os modulot i tocnata pateka pri sto novoto ime se pisuva vo vtoriot string od zagradata podolu"""
+file_ex1 = os.rename("/Users/viktorija/PycharmProjects/Python-I-course/viktorija.txt",
+                     "/Users/viktorija/PycharmProjects/Python-I-course/viktorijajordanova.txt")
+
+"""Brisenje na file so os modulot koj e importiran prethodno i so tocnata pateka na toj file"""
+file_ex2 = os.remove("/Users/viktorija/PycharmProjects/Python-I-course/viktorijajordanova.txt")
+
+"""Premestuvanje na file od foldeot vo koj sto se naoga (Python-I-course/example_directory) - prviot string vo folderot 
+kade sto sakame da se naoga (PythonICourse vo slucajot) - vtoriot string vo zagradata"""
+file_ex3 = sh.move("/Users/viktorija/PycharmProjects/Python-I-course/example_directory/new.txt",
+                    "/Users/viktorija/PycharmProjects/PythonIcourse/new.txt")
+
+
+"""Otvoranje na nov_file.txt vo read+ mode odnosno citanje i zapisuvanje"""
+"""Seek setiranje na kursorot na pocetok na file so 0"""
+with open ("nov_file.txt", "r+") as f:
+    new_f = f.readline()
+    f.seek(0)
+    for line in new_f:
+        if "another" in line:
+            f.write(line)
+
+"""Vgnezdeni otvoranja na file-ovi, input file - od koj sto citame i output file vo koj sto zapisuvame"""
+with open("nov_file.txt", "r") as input:
+    with open("new_file1.txt", "w") as output:
+        for line in input:
+            if line.strip("\n") != "Hello Worlda second lineand a third line":
+                output.write()
+
+
+"""Enkodiranje na viktorija.txt so UTF-8 standardot za specijalni znaci i karakteri"""
+file_ex = open("/Users/viktorija/PycharmProjects/Python-I-course/viktorija.txt", "r", encoding = "utf-8")
+
+"""Otvoranje na viktorija.txt vo read mode i citanje i printanje na prvite 10 karakteri"""
+file_ex1 = open("/Users/viktorija/PycharmProjects/Python-I-course/viktorija.txt", "r")
+print(file_ex1.read(10))
+
+
+# Recursive examples
+
+list = [1,2,3,4,5,6,7,8,9]
+
+
+"""Rekurzivna funkcija - primer za presmetuvanje na suma"""
+def suma_recursive(list):
+
+#     base_case
+    if list == []:
+        return 0
+
+# recursive part
+    else:
+        head = list[0]
+        sliced_list = list[1:]
+        return head+suma_recursive(sliced_list)
+
+
+
+print(suma_recursive([1,2,3,4,5,6,7,8,9]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

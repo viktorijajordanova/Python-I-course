@@ -1,0 +1,240 @@
+"""Specijalni funkcii i metodi i handling exceptions"""
+"""Append dodava element na krajot na listata"""
+
+list1 = [1,2,3,4,5]
+
+list1.append(10)
+print(list1)
+
+"""Insert vmetnuva element na tocno zadaden index primer (0,11) - vnesi go elementot 11 na index broj 0"""
+list1.insert(0,11)
+print(list1)
+
+list1.insert(5,12)
+print(list1)
+
+"""Brisenje na element od lista so konkretniot element daden na metodot"""
+list1.remove(9)
+print(list1)
+
+"""Brisenje na element vo lista so indeksot na elementot"""
+list1.pop(0)
+print(list1)
+
+"""Rabota so lista od stringovi kako elementi"""
+list2 = ["banana", "cherry", "lemon", "orange", "tangerine"]
+
+list2.append("apple")
+print(list2)
+
+list2.append(["avocado", "apple"])
+print(list2)
+
+list2.insert(3, "pear")
+print(list2)
+
+list2.remove("lemon")
+print(list2)
+
+list2.pop(4)
+print(list2)
+
+
+"""Brisenje na elementite na listata - site odednas"""
+list2.clear()
+print(list2)
+
+"""Brisenje na konkreten element od listata so pristapuvanje do indeksot na toj element"""
+del list2[0]
+print(list2)
+
+"""Proshiruvanje na list2 so nova lista"""
+list2.extend(["apple","pear", "tangerine", "apple"])
+print(list2)
+
+"""Broenje kolku pati eden element se pojavuva vo dadena lista"""
+l = list2.count("apple")
+print(l)
+
+list1=[1,8,4,9,2,3,10]
+
+"""Sortiranje na elementite na listata vo rastecki redosled"""
+list1.sort()
+print(list1)
+
+"""Sortiranje vo opagacki redosled - obratno"""
+list1.reverse()
+print(list1)
+
+
+"""Prosiruvanje na listata so elementi od razlicen podatocen tip"""
+list2.extend([1, "juice", True])
+print(list2)
+
+list2.sort()
+print(list2)
+
+"""Kopiranje na listata"""
+list1.copy()
+print(list1)
+
+
+
+list2 = [5, 10, 15, 20, 25, 50, 20]
+
+"""Promena na specificen indeks vo edna lista"""
+def funkcija(lista):
+    for neshto in lista:
+        if neshto == 20:
+            a = list2.index(neshto)
+            list2[a] = 200
+            print(lista)
+
+funkcija(list2)
+
+
+"""algoritam sto ke printa parovi (x,y) kade sto x pripaga na list1, y pripaga na list2 i x!=y"""
+
+print([ (x,y) for x in [1,2,3,4] for y in [2,5,6,8] if x!=y])
+
+"""Istata zadaca od prethodnodno- klasicno resenie """
+# for x in []:
+#     for y in []:
+#         if x!=y:
+#             print((x,y))
+
+
+"""Apsolutna vrednost na element t.e broj"""
+alist = [-4, -2, 0, 2, 4]
+
+print([abs(x) for x in alist])
+
+print([x for x in alist if x >= 0])
+
+"""Mnozenje na celata lista so 2"""
+print([x*2 for x in alist])
+
+
+"""Operacii kaj tuples - vazat istite kako kaj listi"""
+
+a = (1,2,3,4,5,6)
+
+l = a.count(4)
+print(l)
+
+print(len(a))
+
+"""Operacii kaj dictionaries"""
+
+dict = {
+
+    "city": "Skopje",
+    "country": "Macedonia",
+    "population": 1000000
+
+
+}
+
+"""Dodavanje key-value pair na dict-ot od prethodno"""
+dict["nationality"] = "macedonian"
+
+print(dict)
+
+"""Brisenje na key-value pair spored klucot"""
+del dict["city"]
+print(dict)
+
+"""Proverka dali eden kluc se naoga vo toj dict - True/False vrednost"""
+print("city" in dict)
+print("country" in dict)
+
+"""Pretvoranje na dict-ot vo lista"""
+print(list(dict))
+
+"""Vezba za dictionaries"""
+dict1 = {
+
+    "apple": "green",
+    "pear": "yellow",
+    "avocado": "green",
+    "cherry": "red"
+}
+
+dict1["banana"] = "yellow"
+print(dict1)
+
+del dict1["pear"]
+print(dict1)
+
+print("pear" in dict1)
+print("avocado" in dict1)
+
+
+"""Handling exceptions"""
+
+(x,y) = (5,1.3)
+
+# division of two integers
+try:
+    z = x/y
+except ZeroDivisionError as e:
+    print(e)
+
+
+try:
+    a = int(input("Enter a pasitive number: "))
+    if a <= 0:
+        raise ValueError("That is not a positive integer")
+except ValueError as ve:
+    print(ve)
+
+
+try:
+    a = int(input("Enter a negative number: "))
+    if a >= 0:
+        raise ValueError("That is not a negative number")
+except ValueError as a:
+    print(a)
+
+try:
+    a = int(input("Enter a pasitive number: "))
+    if a == 10:
+        raise ValueError ("a is equal to 10")
+except ValueError as v:
+    print(v)
+
+"""Definiranje na neogranicen broj argumenti so *args"""
+def fruits(*args):
+    print(args)
+
+"""Predavanje argumenti na funkcijata"""
+fruits("banana", 1, False, "viktorija")
+fruits(1,2,4,"jordanova",True )
+
+"""Vezba"""
+
+# 8-12. Sandwiches: Write a function that accepts a list of items a person wants on a sandwich .
+# The function should have one parameter that collects as many items as the function call provides,
+# and it should print a summary of the sandwich that is being ordered . Call the function three times,
+# using a different number of arguments each time .
+
+def sandwiches(*args):
+    print(args)
+
+
+sandwiches("ketchup", "mayo", "fries", "saussage")
+sandwiches("mustard", "curry", "chicken")
+
+
+
+def pizza(a,b, *c):
+    print(a,b,c)
+
+
+
+
+
+
+
+
+
