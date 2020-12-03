@@ -1,0 +1,102 @@
+import sqlite3
+
+
+# Connect to the database and create a cursor
+conn = sqlite3.connect('movies.sqlite')
+cursor = conn.cursor()
+
+
+# Create Movie Table
+cursor.execute("CREATE TABLE Movie(Id INT, Name NVARCHAR, year INT)")
+cursor.execute("CREATE TABLE Cinema(Id INT, Name NVARCHAR, num_of_movies_offered INT, seats INT)")
+
+
+# Populate the Movie Table
+cursor.execute("INSERT INTO Movie VALUES(1,'Gladiator', 2000)")
+cursor.execute("INSERT INTO Movie VALUES(2,'The Matrix', 1999)")
+cursor.execute("INSERT INTO Movie VALUES(3,'Forrest Gump', 1994)")
+cursor.execute("INSERT INTO Cinema VALUES(3,'City MAll Cinema', 10, 50)")
+
+
+
+# Execute the query
+target_year = int(input('Search by year: '))
+
+command = ''' SELECT m.Id, m.Name, c.seats
+FROM Movie m, Cinema c
+WHERE m.year = ?
+AND m.name = 'Gladiator'
+AND c.seats = 50
+
+'''
+
+cursor.execute(command, [target_year])
+
+conn.commit()
+
+print(cursor.fetchall())
+
+
+
+""" So postoecka DB"""
+
+conn = sqlite3.connect("chinook.db")
+cursor = conn.cursor()
+
+
+command = """ SELECT LastName, Title, ReportsTo, HireDate
+FROM employees
+WHERE Title = 'IT Staff'
+AND HireDate = '02122020'
+"""
+
+cursor.execute(command)
+
+for vraboten in cursor.fetchall():
+  print (vraboten)
+
+
+conn.commit()
+
+conn.close()
+
+
+"""Excercise"""
+
+conn = sqlite3.connect('chemistry_prize.db')
+cursor = conn.cursor()
+
+command = """ SELECT winner
+FROM nobel_win
+WHERE year between '1965' and '1975'
+AND country in ('France', 'Sweden')
+"""
+
+cursor.execute(command)
+
+conn.close()
+
+# command='''SELECT *
+# FROM NOBEL_WIN
+# WHERE YEAR <=1965
+# AND YEAR =>1950'''
+
+
+"""Excercise 1"""
+
+conn = sqlite3.connect('sales.db')
+cursor = conn.cursor()
+
+command = """ SELECT s.city, f.sea
+FROM salesman s, fisherman f
+
+
+"""""
+
+cursor.execute("INSERT INTO salesman VALUES(5010,'Viktorija', 'Skopje', 0.20)")
+
+cursor.execute(command)
+
+conn.commit()
+
+conn.close()
