@@ -1,0 +1,83 @@
+# """Domasna 3"""
+# import os
+# import shutil as sh
+import math
+#
+# print(os.getcwd())
+#
+# s = "Python can be used for Data Science and Data analysis"
+# with open("myFile.txt", "w+") as myFile:
+#     myFile.write(s)
+#     myFile.close()
+#
+#
+# with open('myFile.txt','w+') as file1:
+#     print(file1.read())
+#     file1.close()
+#
+#
+# promena = os.rename('/Users/viktorija/PycharmProjects/Python-I-course/myFile.txt','/Users/viktorija/PycharmProjects/Python-I-course/myFile2.txt')
+#
+# # this is an example of a text ﬁle  this ﬁle was created with python  we can write on this ﬁle
+#
+# with open("myFile2.txt", "a+") as apnd:
+#     fileb = ["\nthis is an example of a text file", "\nthis file was created with python", "\nwe can write on this file"]
+#     apnd.writelines(fileb)
+#     apnd.close()
+#
+# s1 = sh.move('/Users/viktorija/PycharmProjects/Python-I-course/myFile2.txt', '/Users/viktorija/PycharmProjects/ExampleDir/myFile2.txt')
+#
+# r = os.remove('/Users/viktorija/PycharmProjects/ExampleDir/myFile2.txt')
+#
+#
+
+
+
+
+# try:
+#     Brojce= int(input('Vnesete broj'))
+#     brojce2 = int(input('Vnesete vtor broj'))
+#     rezultat = Brojce*brojce2
+# except ValueError as t:
+#     print("Wrong data type")
+# # dokolku probam da rabotam so netochni typeovi na variables
+# except NameError as n:
+#     print(n)
+# # dokolku bi upotrebil nedefinirano ime
+# else:
+#     print(rezultat)
+
+
+
+def koren(broj):
+    square_root = broj**0.5
+    print(square_root)
+
+koren(36)
+
+
+br = 625
+k = int(math.sqrt(br))
+print(k)
+
+
+# 1,1,2,3,5 ..
+
+def fibonacci():
+    fibonacci_lista = [0, 1]
+    for value in range(0, 100):
+        sleden_broj = fibonacci_lista[-2] + fibonacci_lista[-1]
+        fibonacci_lista.append(sleden_broj)
+    return fibonacci_lista
+
+
+
+print(fibonacci())
+
+
+
+
+
+
+
+

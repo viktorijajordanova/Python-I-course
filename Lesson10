@@ -1,0 +1,51 @@
+"""Strukturiranje na kod"""
+
+import os
+import pandas as pd
+import math as m
+import numpy
+from Lesson5 import name
+import sqlite3
+#
+#
+# # konekcii so baza, APIs, .. ,
+#
+#
+#
+# # funkcii
+#
+#
+#
+#
+def hello_world(i):
+    print(i, "Hello World")
+    name("Viktorija", "Jordanova")
+
+#
+# # main f-ja
+#
+if __name__ == "__main__":
+    hello_world(5)
+    # fruits()
+
+"""Math module - """
+# 5*(5-1)*(5-2)*(5-3) ... 5*4*3*2*1
+print(m.factorial(5))
+print(m.exp(7))
+print(m.pow(2,3))
+print(m.acos(6))
+
+"""Os module"""
+print(os.getcwd())
+print(os.getcwd())
+
+"""Pandas - data analysis"""
+"""Numpy"""
+
+
+
+
+
+
+
+
