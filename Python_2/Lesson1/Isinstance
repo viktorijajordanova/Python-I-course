@@ -1,0 +1,26 @@
+class Company():
+    pass
+
+c1 = Company()
+
+c1.name = 'Semos'
+
+c2 = c1
+
+c1.name = "XYZ"
+
+print(c1.name, type(c1), id(c1))
+print(c2.name, type(c2), id(c2))
+
+a = "ABC"
+b = a
+
+b += "X"
+
+print(a, id(a))
+print(b, id(b))
+
+
+print(isinstance(a, str))
+print(isinstance(c1, Company))
+print(isinstance(c1, str))

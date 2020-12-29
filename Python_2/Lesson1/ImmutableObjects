@@ -1,0 +1,55 @@
+# explain immutable objects with id() function
+
+# show id function on mutable objects
+
+class Company:
+    def __init__(self, name):
+        self.name = name
+
+
+company_1 = Company('xyz')
+company_2 = company_1
+
+
+company_2.name = 'abc'
+
+
+# explain pointers with lists
+
+
+#t1 = (1,2,3)
+#t2 = (4,5,6)
+
+#t3 = t1 + t2
+
+#print(id(t1))
+#print(id(t2))
+#print(id(t3))
+
+#l1 = [4,5,6]
+#print(id(l1))
+
+#l1.append(7)
+
+#print(id(l1))
+
+
+a = 1
+b = 2
+c = 3
+
+d = a+b
+
+print(a, id(a))
+print(b, id(b))
+print(c, id(c))
+print(d, id(d))
+
+
+#a = 'aaa'
+#b = 'aa'
+
+#b += 'a'
+
+#print(a, id(a))
+#print(b, id(b))
