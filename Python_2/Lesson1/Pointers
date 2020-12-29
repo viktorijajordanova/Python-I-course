@@ -1,0 +1,22 @@
+"""Pointers - example"""
+class Company:
+    def __init__(self, name):
+        self.name = name
+
+
+company_1 = Company('xyz')
+company_2 = company_1
+
+company_2.name = 'abc'
+
+
+x = 1
+y = 2
+
+print('X id', id(x))
+print('Y id', id(y))
+
+x += 1
+
+print('X id', id(x))
+print('Y id', id(y))
