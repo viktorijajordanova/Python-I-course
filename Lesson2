@@ -166,7 +166,7 @@ list2.pop(-1)
 print(list2)
 
 #3.
-# Zadaca: keys = ['Ten', 'Twenty', ‘Thirty']  values = [10, 20, 30]
+# Zadaca: keys = ['Ten', 'Twenty', ‘Thirty'] values = [10, 20, 30]
 dict3 = {
 
     "Ten": 10,
