@@ -60,11 +60,13 @@ class Company:
 
 class Employee:
     
-    def __init__(self, first_name, last_name, email):
+    def __init__(self, first_name, last_name, email, embg):
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
-
+        self.embg = embg
+        Employee.validate_embg(embg)
+        
         self.salary = None
         self.position = None
         self.company = None
@@ -82,6 +84,17 @@ class Employee:
         else:
             reason = (input("Please provide a reason for your resignation: "))
             self.company.fire(self, reason, True)
+            
+    @staticmethod       
+    def validate_embg (embg):
+        if type(embg) != str:
+            raise Exception("Only input in string format is acceptable.")
+    
+        if len(embg) != 13: 
+            raise Exception ("EMBG consist of 13 digits.")
+    
+        if embg.isdigit() == False:
+            raise Exception ("EMBG contains only numbers")
         
 import datetime
         
@@ -101,12 +114,17 @@ class Offer:
 
 print('### CODE EXECUTION STARTS HERE ###')
 
+# Valid EMBG
 semos = Company("Semos Edukacija", "Kuzman Josifovski Pitu XXX", "1234")
-petko = Employee("Petko", "Petkov", "petko@mailinator.com")
+petko = Employee("Petko", "Petkov", "petko@mailinator.com", "0111992450015")  
 semos.hire(petko, 'Developer', 30000)
 petko.resign()
-# kiro = Offer(semos, petko, "Developer", 1000)
-# print(kiro)
+
+# Invalid EMBG
+semos = Company("Semos Edukacija", "Kuzman Josifovski Pitu XXX", "1234")
+stanko = Employee("Stanko", "Stankov", "stanko@mailinator.com", "140998945001")  
+semos.hire(stanko, 'Developer', 30000)
+stanko.resign()
 
 # semos = Company("Semos Edukacija", "Kuzman Josifovski Pitu XXX", "1234")
 # quipu = Company('Quipu', 'Ilindenska XXX', "3456")
