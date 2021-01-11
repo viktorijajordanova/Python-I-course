@@ -1,18 +1,26 @@
 """Classes - Inheritance"""
+"""Enkapsulacija - pravenje na metodi i atributi private"""
+"""Polimorfizam - Menuvanje na metod (vo child klasata) koj shto e nasleden od parent klasata"""
+
+# memberwise initializer
 class Animal:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    def __init__(spices, name, age):
+        # private name
+        spices.__name = name
+        spices.age = age
+
+        # print(spices.__name)
+
+
     def show(self):
         print(f"I am {self.name} and I'm {self.age}")
 
+
+    @property
     def speak(self):
         print("I don't know what I say")
 
 class Cat(Animal):
-    def __init__(self, name, age, color):
-        super().__init__(name, age)
-        self.color = color
 
     def speak(self):
         print("Meow")
@@ -21,21 +29,36 @@ class Cat(Animal):
         print(f"I am {self.name} and I'm {self.age} and I am {self.color}")
 
 class Dog1(Animal):
+    def __init__(self, name, age, small = True):
+        super().__init__(name, age)
+        self.small = small
+
     def speak(self):
         print("Aw aw aw")
 
 class Fish(Animal):
     pass
 
+
+
+
+def speak():
+    pass
+
+def speak_1():
+    pass
+
+
 p = Animal ("Aron", 25)
+
 p.show()
 p.speak()
-c = Cat("Linda", 2, "white")
-c.show()
-c.speak()
-d = Dog1 ("Timi", 5)
-d.show()
-d.speak()
-f = Fish("Bubbles", 10)
-f.show()
-f.speak()
+# c = Cat("Linda", 2, "white")
+# c.show()
+# c.speak()
+# d = Dog1 ("Timi", 5)
+# d.show()
+# d.speak()
+# f = Fish("Bubbles", 10)
+# f.show()
+# f.speak()
