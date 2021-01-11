@@ -1,0 +1,39 @@
+class Employee:
+    def __init__(self, first_name, last_name):
+        # private first_name
+        self.__first_name = first_name
+
+        # private last_name
+        self.__last_name = last_name
+
+        print('in __init__', self.__first_name)
+        print('in __init__', self.__last_name)
+        print('in __init__', self._Employee__first_name)
+        print('in __init__', self.full_name)
+
+    # getter
+    def get_first_name(self):
+        return self.__first_name
+
+    # setter
+    def set_first_name(self, first_name):
+        invalidate_personal_id_card()
+
+        self.__first_name = first_name
+
+    #private method
+    @property # propery = attribute
+    def full_name(self):
+        return "{} {}".format(self.__first_name, self.__last_name)
+
+emp = Employee('Trajko', 'Trajkov')
+
+#print(emp.__first_name)
+#print(emp.__last_name)
+
+#print(emp.__full_name())
+
+print(emp.__dict__)
+print('outside', emp.full_name)
+
+#print(emp.__dict__)
