@@ -6,6 +6,11 @@ class Company:
         self.address = address
         self.company_id = company_id
         self.employee_list = []
+        self.offers_list = []
+        
+    def send_offer(self, employee, offer):
+        employee.offers.append(offer)
+        self.offers_list.append(offer)                
 
     def hire(self, employee, position, salary):
 
@@ -61,12 +66,12 @@ class Company:
 class Employee:
     
     def __init__(self, first_name, last_name, email, embg):
+        Employee.validate_embg(embg)
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
         self.embg = embg
-        Employee.validate_embg(embg)
-        
+        self.offers = []
         self.salary = None
         self.position = None
         self.company = None
@@ -84,6 +89,13 @@ class Employee:
         else:
             reason = (input("Please provide a reason for your resignation: "))
             self.company.fire(self, reason, True)
+            
+    def reject_offer(self, offer):
+        offer.response = False
+        
+    def accept_offer(self, offer):
+        offer.response = True
+        offer.company.hire(self, offer.position, offer.salary)
             
     @staticmethod       
     def validate_embg (embg):
@@ -119,6 +131,16 @@ semos = Company("Semos Edukacija", "Kuzman Josifovski Pitu XXX", "1234")
 petko = Employee("Petko", "Petkov", "petko@mailinator.com", "0111992450015")  
 semos.hire(petko, 'Developer', 30000)
 petko.resign()
+print(petko.company)
+
+# Accepting offer
+ponuda = Offer(semos, petko, "DevOps", 50000)
+semos.send_offer(petko, ponuda)
+petko.accept_offer(ponuda)
+print("Posle prifakjanje na poudata" + str(ponuda))
+print(petko.company)
+print(petko.position)
+print(petko.salary)
 
 # Invalid EMBG
 semos = Company("Semos Edukacija", "Kuzman Josifovski Pitu XXX", "1234")
