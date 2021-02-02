@@ -12,7 +12,8 @@ class SomeList:
         for i in range(0, len(self.list)):
             if element == self.list[i]:
                 return f'{self.list[i]} se naogja na pozicija #{i} '
-            # print(i, self.list[i])
+            else:
+                return "Ne posoti takov element vo listata"
 
 
 s = SomeList([8.3, 3, "5", 6.256, 8, "a111aa", "Filip"])
